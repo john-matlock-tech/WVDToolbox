@@ -95,11 +95,11 @@ class WVDEnvironment
 
     WVDEnvironment($AzureTenantId, $DisplayName, $WVDDeploymentUrl, $Secret, $UserName)
     {
-       $this.AzureTenantId = $AzureTenantId
-       $this.WVDDeploymentUrl = $WVDDeploymentUrl
-       $this.Secret = $Secret
-       $this.UserName = $UserName
-       $this.DisplayName = $DisplayName
+        $this.AzureTenantId = $AzureTenantId
+        $this.WVDDeploymentUrl = $WVDDeploymentUrl
+        $this.Secret = $Secret
+        $this.UserName = $UserName
+        $this.DisplayName = $DisplayName
     }
 
     WVDEnvironment()
