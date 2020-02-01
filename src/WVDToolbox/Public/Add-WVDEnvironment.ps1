@@ -61,8 +61,6 @@ function Add-WVDEnvironment
         [securestring]$SpnSecret
     )
 
-    $result = $false
-
     $ApplicationDataFolder = [System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::ApplicationData);
     $myStorageFolder = ($ApplicationDataFolder | Join-Path -ChildPath "WVDToolbox");
     New-Item -ItemType Directory $myStorageFolder -ErrorAction SilentlyContinue | Out-Null
