@@ -69,16 +69,16 @@ Description = 'A PowerShell Module to simplify the enablement and management of 
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = 'Add-WVDEnvironment'
+FunctionsToExport = @('Add-WVDEnvironment', 'Get-WVDEnvironment')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Add-WVDEnvironment'
+CmdletsToExport = @('Add-WVDEnvironment', 'GetWVD-Environment')
 
 # Variables to export from this module
 VariablesToExport = '*'
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = 'Add-WVDEnvironment'
+AliasesToExport = @('Add-WVDEnvironment', 'Get-WVDEnvironment')
 
 # DSC resources to export from this module
 # DscResourcesToExport = @()

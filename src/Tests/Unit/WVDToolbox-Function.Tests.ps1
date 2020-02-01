@@ -38,12 +38,18 @@ InModuleScope 'WVDToolbox' {
                 #>
         }#context_FunctionName
     }#describe_testFunctions
-    Describe 'New-WVDEnvironment' -Tag Unit {
+    Describe 'Add-WVDEnvironment' -Tag Unit {
         Context 'Configuration' {
                 It "Adds new environment configuration json file to local profile." {
                     Add-WVDEnvironment -DisplayName "UnitTest" -AzureTenantId "someguid" -SpnApplicationId "applicationid" -CredentialSecret $("securestring" |ConvertTo-SecureString -AsPlainText -Force) | Should -Be $true
-                }#it
-
-        }#context_FunctionName
-    }#describe_testFunctions
+                }
+        }
+    }
+    Describe 'Get-WVDEnvironment' -Tag Unit {
+        Context 'Configuration' {
+                It "Reads existing environment configuration json file from local profile." {
+                    (Get-WVDEnvironment -DisplayName "UnitTest").DisplayName | Should -Be "UnitTest"
+                }
+        }
+    }
 }#inModule
