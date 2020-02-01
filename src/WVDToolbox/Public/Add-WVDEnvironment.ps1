@@ -47,13 +47,13 @@ function Add-WVDEnvironment
         [string]$UserName,
 
         [Parameter(Mandatory = $false,
-            HelpMessage = 'Application ID of the Service Principal Name used for WVD automation.']
+            HelpMessage = 'Application ID of the Service Principal Name used for WVD automation.')]
         [ValidateNotNull()]
         [ValidateNotNullOrEmpty()]
         [string]$SpnApplicationId,
 
         [Parameter(Mandatory = $false,
-            HelpMessage = 'User Password, client secret or certificate thumprint of the Service Principal Name used for WVD automation.']
+            HelpMessage = 'User Password, client secret or certificate thumprint of the Service Principal Name used for WVD automation.')]
         [ValidateNotNull()]
         [ValidateNotNullOrEmpty()]
         [securestring]$CredentialSecret
