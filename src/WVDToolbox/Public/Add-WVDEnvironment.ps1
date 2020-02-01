@@ -21,6 +21,7 @@
 function Add-WVDEnvironment
 {
     [CmdletBinding()]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingConvertToSecureStringWithPlainText", "")]
     param (
         [Parameter(Mandatory = $false,
             HelpMessage = 'Enviroment Display Name.')]

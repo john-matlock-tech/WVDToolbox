@@ -38,7 +38,8 @@ InModuleScope 'WVDToolbox' {
     }#describe_testFunctions
     Describe 'New-WVDEnvironment' -Tag Unit {
         Context 'Configuration' {
-
+                [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingConvertToSecureStringWithPlainText", "")]
+                param()
                 It "Adds new environment configuration json file to local profile." {
                     Add-WVDEnvironment -DisplayName "UnitTest" -AzureTenantId "someguid" -SpnApplicationId "applicationid" -SpnSecret $("securestring" |ConvertTo-SecureString -AsPlainText -Force) | Should -Be $true
                 }#it
