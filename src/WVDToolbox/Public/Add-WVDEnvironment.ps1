@@ -93,7 +93,8 @@ class WVDEnvironment
     [string]$UserName
     [ValidateNotNullOrEmpty()][string]$Secret
 
-    WVDEnvironment($AzureTenantId, $DisplayName, $WVDDeploymentUrl, $Secret, $UserName) {
+    WVDEnvironment($AzureTenantId, $DisplayName, $WVDDeploymentUrl, $Secret, $UserName)
+    {
        $this.AzureTenantId = $AzureTenantId
        $this.WVDDeploymentUrl = $WVDDeploymentUrl
        $this.Secret = $Secret
