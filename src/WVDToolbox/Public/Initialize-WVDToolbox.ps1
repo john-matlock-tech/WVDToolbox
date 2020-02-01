@@ -28,6 +28,6 @@ function Initialize-WVDToolbox
         # [ValidateNotNullOrEmpty()]
         # [string]$YourParameter
     )
-    $message = 'Hello World'
-    return $message
+    $result = $false
+    return $result
 }#Initialize-WVDToolbox
