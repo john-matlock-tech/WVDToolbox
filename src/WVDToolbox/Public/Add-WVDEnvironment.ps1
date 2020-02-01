@@ -47,18 +47,16 @@ function Add-WVDEnvironment
         [string]$UserName,
 
         [Parameter(Mandatory = $false,
-            HelpMessage = 'Application ID of the Service Principal Name used for WVD automation.',
-            ParameterSetName = 'SPN')]
+            HelpMessage = 'Application ID of the Service Principal Name used for WVD automation.']
         [ValidateNotNull()]
         [ValidateNotNullOrEmpty()]
         [string]$SpnApplicationId,
 
         [Parameter(Mandatory = $false,
-            HelpMessage = 'Client secret or Certificate thumprint of the Service Principal Name used for WVD automation.',
-            ParameterSetName = 'SPN')]
+            HelpMessage = 'User Password, client secret or certificate thumprint of the Service Principal Name used for WVD automation.']
         [ValidateNotNull()]
         [ValidateNotNullOrEmpty()]
-        [securestring]$SpnSecret
+        [securestring]$CredentialSecret
     )
 
     $ApplicationDataFolder = [System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::ApplicationData);
@@ -69,7 +67,7 @@ function Add-WVDEnvironment
     $environmentConfiguration.DisplayName = $DisplayName
     $environmentConfiguration.AzureTenantId = $AzureTenantId
     $environmentConfiguration.WVDDeploymentUrl = $DeploymentUrl
-    $environmentConfiguration.Secret = ConvertFrom-SecureString $SpnSecret
+    $environmentConfiguration.Secret = ConvertFrom-SecureString $CredentialSecre
     $environmentConfiguration.UserName = $UserName
 
     try

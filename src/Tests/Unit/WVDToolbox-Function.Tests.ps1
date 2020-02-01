@@ -39,8 +39,8 @@ InModuleScope 'WVDToolbox' {
     Describe 'New-WVDEnvironment' -Tag Unit {
         Context 'Configuration' {
 
-                It "true is not false" {
-                    Add-WVDEnvironment | Should -Be $true
+                It "Adds new environment configuration json file to local profile." {
+                    Add-WVDEnvironment -DisplayName "UnitTest" -AzureTenantId "someguid" -SpnApplicationId "applicationid" -SpnSecret $("securestring" |ConvertTo-SecureString -AsPlainText -Force) | Should -Be $true
                 }#it
 
         }#context_FunctionName
