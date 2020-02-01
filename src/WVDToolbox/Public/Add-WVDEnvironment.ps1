@@ -67,7 +67,7 @@ function Add-WVDEnvironment
     $environmentConfiguration.DisplayName = $DisplayName
     $environmentConfiguration.AzureTenantId = $AzureTenantId
     $environmentConfiguration.WVDDeploymentUrl = $DeploymentUrl
-    $environmentConfiguration.Secret = ConvertFrom-SecureString $CredentialSecre
+    $environmentConfiguration.Secret = ConvertFrom-SecureString $CredentialSecret
     $environmentConfiguration.UserName = $UserName
 
     try
