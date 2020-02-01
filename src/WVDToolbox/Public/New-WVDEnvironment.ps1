@@ -42,20 +42,20 @@ function Add-WVDEnvironment
 
         [Parameter(Mandatory = $false,
             HelpMessage = 'Application ID of the Service Principal Name used for WVD automation.',
-            ParameterSetName = ’SPN’)]
+            ParameterSetName = 'SPN')]
         [ValidateNotNull()]
         [ValidateNotNullOrEmpty()]
         [string]$SpnApplicationId,
 
         [Parameter(Mandatory = $false,
             HelpMessage = 'Client secret or Certificate thumprint of the Service Principal Name used for WVD automation.',
-            ParameterSetName = ’SPN’)]
+            ParameterSetName = 'SPN')]
         [ValidateNotNull()]
         [ValidateNotNullOrEmpty()]
         [string]$SpnSecret
-
     )
 
     $result = $false
+
     return $result
 }#Initialize-WVDToolbox
