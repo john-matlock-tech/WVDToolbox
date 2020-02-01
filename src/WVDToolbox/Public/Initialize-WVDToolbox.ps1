@@ -18,7 +18,8 @@
 .COMPONENT
     WVDToolbox
 #>
-function Initialize-WVDToolbox {
+function Initialize-WVDToolbox
+{
     [CmdletBinding()]
     param (
         # [Parameter(Mandatory = $true,

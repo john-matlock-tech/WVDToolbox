@@ -172,7 +172,7 @@ Add-BuildTask FormattingCheck {
     }
 
     Write-Build White '      Performing script formatting checks...'
-    $scriptAnalyzerResults = Get-ChildItem -Path $script:ModuleSourcePath -Exclude "*.psd1","*.build.ps1", "*.settings.ps1" | Invoke-ScriptAnalyzer @scriptAnalyzerParams
+    $scriptAnalyzerResults = Get-ChildItem -Path $script:ModuleSourcePath -Exclude "*.psd1","*.build.ps1","*.settings.ps1" | Invoke-ScriptAnalyzer @scriptAnalyzerParams
 
     if ($scriptAnalyzerResults) {
         $scriptAnalyzerResults | Format-Table
