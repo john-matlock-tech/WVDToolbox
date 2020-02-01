@@ -36,11 +36,11 @@ InModuleScope 'WVDToolbox' {
                 #>
         }#context_FunctionName
     }#describe_testFunctions
-    Describe 'Initialize-WVDToolbox' -Tag Unit {
+    Describe 'New-WVDEnvironment' -Tag Unit {
         Context 'Configuration' {
 
                 It "true is not false" {
-                    $true | Should -Be $true
+                    Add-WVDEnvironment | Should -Be $true
                 }#it
 
         }#context_FunctionName
