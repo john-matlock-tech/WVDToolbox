@@ -64,15 +64,19 @@ function Add-WVDEnvironment
     $myStorageFolder = ($ApplicationDataFolder | Join-Path -ChildPath "WVDToolbox");
     New-Item -ItemType Directory $myStorageFolder -ErrorAction SilentlyContinue | Out-Null
     $environmentConfigurationFile = "$myStorageFolder`\$($displayName.Replace(' ',''))`.json"
-    $environmentConfiguration = New-Object -TypeName WVDEnvironment
-    $environmentConfiguration.DisplayName = $DisplayName
-    $environmentConfiguration.AzureTenantId = $AzureTenantId
-    $environmentConfiguration.WVDDeploymentUrl = $DeploymentUrl
-    $environmentConfiguration.Secret = ConvertFrom-SecureString $CredentialSecret
-    $environmentConfiguration.UserName = $UserName
+    if ($UserName -like $null -and $SpnApplicationId -notlike $null)
+    {
+        Write-Host "Using SPN Authentication for this environment."
+        $UserName = $SpnApplicationId
+    }
+    else
+    {
+        Write-Host "Using AAD User Authentcation for this environment."
+    }
 
     try
     {
+        $environmentConfiguration = New-Object -TypeName WVDEnvironment -ArgumentList $AzureTenantId,$DisplayName,$DeploymentUrl,(ConvertFrom-SecureString $CredentialSecret),$UserName
         $environmentConfiguration | ConvertTo-Json | Set-Content $environmentConfigurationFile -Encoding UTF8 -ErrorAction Stop
         Test-Path $environmentConfigurationFile
     }
@@ -89,7 +93,6 @@ class WVDEnvironment
     [ValidateNotNullOrEmpty()][string]$WVDDeploymentUrl
     [string]$UserName
     [ValidateNotNullOrEmpty()][string]$Secret
-
     WVDEnvironment($AzureTenantId, $DisplayName, $WVDDeploymentUrl, $Secret, $UserName)
     {
         $this.AzureTenantId = $AzureTenantId
