@@ -66,12 +66,12 @@ function Add-WVDEnvironment
     $environmentConfigurationFile = "$myStorageFolder`\$($displayName.Replace(' ',''))`.json"
     if ($UserName -like $null -and $SpnApplicationId -notlike $null)
     {
-        Write-Host "Using SPN Authentication for this environment."
+        #Write-Output "Using SPN Authentication for this environment."
         $UserName = $SpnApplicationId
     }
     else
     {
-        Write-Host "Using AAD User Authentcation for this environment."
+        #Write-Output "Using AAD User Authentcation for this environment."
     }
 
     try

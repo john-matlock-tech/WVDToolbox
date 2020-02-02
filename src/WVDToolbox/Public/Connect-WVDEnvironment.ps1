@@ -34,7 +34,6 @@ function Connect-WVDEnvironment
         $environmentConfiguration = Get-WVDEnvironment -DisplayName $DisplayName
         $cred = New-Object -TypeName PSCredential $environmentConfiguration.UserName,(ConvertTo-SecureString $environmentConfiguration.Secret)
         Add-RdsAccount -DeploymentUrl $environmentConfiguration.WVDDeploymentUrl -Credential $cred -ServicePrincipal -AadTenantId $environmentConfiguration.AzureTenantId
-
     }
     catch
     {
