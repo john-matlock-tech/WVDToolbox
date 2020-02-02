@@ -51,7 +51,7 @@ Description = 'A PowerShell Module to simplify the enablement and management of 
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-# RequiredModules = @()
+RequiredModules = @('Microsoft.RDInfra.RDPowershell')
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
