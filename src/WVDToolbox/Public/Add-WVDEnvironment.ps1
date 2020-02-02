@@ -60,10 +60,8 @@ function Add-WVDEnvironment
         [securestring]$CredentialSecret
     )
 
-    $ApplicationDataFolder = [System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::ApplicationData);
-    $myStorageFolder = ($ApplicationDataFolder | Join-Path -ChildPath "WVDToolbox");
-    New-Item -ItemType Directory $myStorageFolder -ErrorAction SilentlyContinue | Out-Null
-    $environmentConfigurationFile = "$myStorageFolder`\$($displayName.Replace(' ',''))`.json"
+    New-Item -ItemType Directory $Script:moduleRoot -ErrorAction SilentlyContinue | Out-Null
+    $environmentConfigurationFile = "$($Script:moduleRoot)`\$($displayName.Replace(' ',''))`.json"
     if ($UserName -like $null -and $SpnApplicationId -notlike $null)
     {
         #Write-Output "Using SPN Authentication for this environment."

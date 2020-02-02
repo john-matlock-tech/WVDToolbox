@@ -36,3 +36,6 @@ foreach ($file in @($public + $private))
 
 # export all public functions
 Export-ModuleMember -Function $public.Basename
+
+$ApplicationDataFolder = [System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::ApplicationData)
+$Script:moduleRoot = ($ApplicationDataFolder | Join-Path -ChildPath "WVDToolbox")

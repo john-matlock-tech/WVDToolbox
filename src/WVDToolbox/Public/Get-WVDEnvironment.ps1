@@ -29,9 +29,7 @@ function Get-WVDEnvironment
         [string]$DisplayName = "My WVD Environment"
     )
 
-    $ApplicationDataFolder = [System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::ApplicationData);
-    $myStorageFolder = ($ApplicationDataFolder | Join-Path -ChildPath "WVDToolbox");
-    $environmentConfigurationFile = "$myStorageFolder`\$($displayName.Replace(' ',''))`.json"
+    $environmentConfigurationFile = "$($Script:moduleRoot)`\$($displayName.Replace(' ',''))`.json"
 
     try
     {

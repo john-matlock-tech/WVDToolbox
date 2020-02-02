@@ -29,8 +29,7 @@ $null = $modulesToInstall.Add(([PSCustomObject]@{
             ModuleName    = 'platyPS'
             ModuleVersion = '0.12.0'
         }))
-# https://github.com/PowerShell/platyPS
-# older version used due to: https://github.com/PowerShell/platyPS/issues/457
+
 $null = $modulesToInstall.Add(([PSCustomObject]@{
             ModuleName    = 'Microsoft.RDInfra.RDPowershell'
             ModuleVersion = '1.0.1534.2001'
