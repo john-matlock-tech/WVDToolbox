@@ -18,7 +18,7 @@
 .COMPONENT
     WVDToolbox
 #>
-function Add-WVDEnvironment
+function Register-WVDEnvironment
 {
     [CmdletBinding()]
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingConvertToSecureStringWithPlainText", "")]
@@ -80,6 +80,7 @@ function Add-WVDEnvironment
     }
     catch
     {
+        Write-Error $_.Exception.Message
         $false
     }
 }#Add-WVDEnvironment

@@ -69,16 +69,16 @@ RequiredModules = @('Microsoft.RDInfra.RDPowershell')
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @('Add-WVDEnvironment', 'Get-WVDEnvironment', 'Connect-WVDEnvironment')
+FunctionsToExport = @('Register-WVDEnvironment', 'Get-WVDEnvironment', 'Register-WVDHostPool', 'Connect-WVDEnvironment', 'Invoke-HostPoolUpdate', 'Get-WVDHostPool', 'Publish-WVDHostPool')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = @('Add-WVDEnvironment', 'Get-WVDEnvironment', 'Connect-WVDEnvironment')
+CmdletsToExport = @('Register-WVDEnvironment', 'Get-WVDEnvironment', 'Register-WVDHostPool', 'Connect-WVDEnvironment', 'Invoke-HostPoolUpdate', 'Get-WVDHostPool', 'Publish-WVDHostPool')
 
 # Variables to export from this module
 VariablesToExport = '*'
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = @('Add-WVDEnvironment', 'Get-WVDEnvironment', 'Connect-WVDEnvironment')
+AliasesToExport = @('Register-WVDEnvironment', 'Get-WVDEnvironment', 'Register-WVDHostPool', 'Connect-WVDEnvironment', 'Invoke-HostPoolUpdate', 'Get-WVDHostPool', 'Publish-WVDHostPool')
 
 # DSC resources to export from this module
 # DscResourcesToExport = @()
