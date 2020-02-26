@@ -70,6 +70,12 @@ function Register-WVDHostPool
         [int]$HostCount = 1,
 
         [Parameter(Mandatory = $true,
+            HelpMessage = 'Name of the Azure location to deploy WVD to.  eastus2, westus2, etc...')]
+        [ValidateNotNull()]
+        [ValidateNotNullOrEmpty()]
+        [string]$Location,
+
+        [Parameter(Mandatory = $true,
             HelpMessage = 'Domain for the VM Hosts to join, in FQDN format.')]
         [ValidateNotNull()]
         [ValidateNotNullOrEmpty()]

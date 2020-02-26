@@ -75,7 +75,7 @@ function Publish-WVDHostPool
             'tenantAdminPassword' = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR(($envConf.Secret | ConvertTo-SecureString)))
             'isServicePrincipal' = $true
             'aadTenantId' = $envConf.AzureTenantId
-            'location' = 'westus2'
+            'location' = $config.Location
         }
         $params = @{
             'ResourceGroupName' = $config.ResourceGroup
@@ -109,7 +109,7 @@ function Publish-WVDHostPool
             'tenantAdminPassword' = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR(($envConf.Secret | ConvertTo-SecureString)))
             'isServicePrincipal' = $true
             'aadTenantId' = $envConf.AzureTenantId
-            'location' = 'westus2'
+            'location' = $config.Location
             'userLogoffDelayInMinutes' = 0
             'userNotificationMessage' = 'Scheduled maintenance, please save your work and logoff as soon as possible'
         }
